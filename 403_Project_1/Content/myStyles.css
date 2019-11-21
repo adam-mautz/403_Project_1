@@ -1,2 +1,15 @@
 ﻿body {
 }
+
+h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: goldenrod;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    color: goldenrod;
+    text-align: center;
+    
+}
