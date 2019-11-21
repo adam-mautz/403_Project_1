@@ -1,30 +1,53 @@
 ﻿@{
+    /**/
+
     ViewBag.Title = "Home Page";
 }
+<style>
+    p {
+        color: black;
+    }
 
-<div class="jumbotron">
-    <div style="background: rgba(86,86,86,.5)">
-        <h1>Called to Serve!</h1>
-        <p class="lead" style="text-align:center">"It's easy to play any musical instrument: all you have to do is touch the right key at the right time and the instrument will play itself" -Johann Sebastian Bach</p>
-    </div>
-</div>
+    h1 {
+        color: black;
+    }
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Instrument Rental</h2>
-        <p>
-            View our wide variety of rental options, including new and used instruments.
-        </p>
-        <p><a class="btn btn-default" href='@Url.Action("Index", "Mission")'>View Missions &raquo;</a></p>
+    h2 {
+        color: black;
+    }
+</style>
+
+
+<body style="background-image: url('../../Content/mormon-missionaries-riding-bikes-1178927-wallpaper.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover">
+    <div class="jumbotron" style="background: rgba(194,159,139,.1); height: 175px; padding-top: 5px">
+        <div>
+            <h1 style=" text-align: center; margin-top: 1px; padding-top:3px">Serve the Called</h1>
+            <p class="lead" style="text-align:center">"The happiest people I know are those who lose themselves in the service of others." -Gordon B. Hinckley</p>
+            <p style="text-align: center"><a class="btn btn-default" href='@Url.Action("Index", "Missions")'>Get Started &raquo;</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Learn About Us</h2>
-        <p>Learn more about us at !</p>
-        <p><a class="btn btn-default" href='@Url.Action("Index", "About")'>About Us &raquo;</a></p>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <br /><br /><br /><br /> <br /><br /><br /><br /><br /><br /><br /><br /><br/>
+
+    <div class="row" style="background-color: #F3E5CB; text-align: center">
+        <div class="col-md-4">
+            <h2>Missions</h2>
+            <p>
+                View information on a number of missions.
+            </p>
+            <p><a class="btn btn-default" href='@Url.Action("Index", "Missions")'>View Missions &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Learn About Us</h2>
+            <p>Learn more about our company, goal, and purpose!</p>
+            <p><a class="btn btn-default" href='@Url.Action("Index", "About")'>About Us &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Contact Our Team </h2>
+            <p>Questions? Drop us a line, we're always listening!</p>
+            <p><a class="btn btn-default" href='@Url.Action("Index", "Contact")'>Contact Us&raquo;</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Contact Our Team </h2>
-        <p>Questions? Comments? Drop us a line, we're always listening!</p>
-        <p><a class="btn btn-default" href='@Url.Action("Index", "Contact")'>Contact Us&raquo;</a></p>
-    </div>
-</div>
+</body>
