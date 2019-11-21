@@ -1,31 +1,18 @@
-﻿<!--
-The missions view will have a dropdown that will consist of (for now) three missions
-    (you will choose any 3 missions which have been hardcoded into the dropdown).
-As the user clicks on an entry in the mission list, take them to another view (_____ mission FAQ’s) 
-    which is dynamically loaded using source code. For now, the questions and answers on the view for each mission 
-    will all be the same (HARD CODED - You will create the question and answer), regardless of which mission is chosen. 
-You must however pass the following unique information for each mission in the viewbag:
+﻿@model _403_Project_1.Models.Mission
 
-mission name
-mission president’s name
-mission address
-language
-climate
-dominant religion
-a flag or symbol for the mission.
-
-You will need to display all of this information in a section above the FAQ’s on the dynamically loaded view.
-    Please make it look professional. Talk with classmates and talk about the most effective ways to display this information.
-At the very bottom of each dynamically created mission’s FAQ’s will be a question form.
-The user will be able to fill out this form to post a new question, just like you would post a comment on Facebook.
-  ** For project 1 we will not be posting the questions or saving them in the database, we just want the form to be there and available.
-Under each FAQ question, there will also need to be a way for a user to answer that specific question, 
-    so you will need to add a reply button in order to have a response form dynamically created when a missionary wants 
-    to answer another missionary’s question. You do not need to save the replies for this project.
--->
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "MissionChosen";
 }
-@Htlm.DropDownListFor
-<h2>Index</h2>
+<h2>Mission Details</h2>
 
+@using (Html.BeginForm("MissionChosen", "Missions", FormMethod.Get))
+{
+    <fieldset>
+        Select a mission: 
+        <!--Leave as "Missions" plural-->
+        @Html.DropDownList("Missions")
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+</fieldset>
+} 
