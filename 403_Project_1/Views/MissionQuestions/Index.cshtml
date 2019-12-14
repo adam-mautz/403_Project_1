@@ -1,0 +1,86 @@
+﻿@model IEnumerable<_403_Project_1.Models.MissionQuestions>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #636363;
+        color: white;
+    }
+</style>
+
+<header></header>
+<h1 class="text-center">@ViewBag.Name Mission FAQ Page</h1>
+<br />
+<div style="width: 50%; margin: auto">
+    <dl class="dl-horizontal">
+        <dt>Mission Name: </dt>
+        <dd>@ViewBag.Name Mission</dd>
+        <dt>Mission President: </dt>
+        <dd>President @ViewBag.President</dd>
+        <dt>Address: </dt>
+        <dd>@ViewBag.Addy </dd>
+        <dt>Mission Language: </dt>
+        <dd>@ViewBag.Language </dd>
+        <dt>Climate </dt>
+        <dd>@ViewBag.Climate </dd>
+        <dt>Dominant Religion: </dt>
+        <dd>@ViewBag.Religion </dd>
+        <dt>Mission Symbol: </dt>
+        <dd>@ViewBag.Symbol </dd>
+    </dl>
+</div>
+
+<section>
+    <div>
+        <table class="table" >
+            <tr style="background-color: #f2f2f2">
+                <th>
+                    @Html.DisplayNameFor(model => model.QUESTION)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ANSWER)
+                </th>
+                <th></th>
+            </tr>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QUESTION)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ANSWER)
+                    </td>
+                    <td>
+                        <button onclick="location.href='@Url.Action("Edit", "MissionQuestions", new { id = item.QUESTION_ID })'">Submit another Answer</button>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <p>
+            <button onclick="location.href='@Url.Action("Create", "MissionQuestions")'">Ask your own question!</button>
+        </p>
+
+    </div>
+</section>

@@ -1,18 +1,23 @@
-﻿@model _403_Project_1.Models.Mission
-
+﻿@model _403_Project_1.Models.Missions
 @{
-    ViewBag.Title = "MissionChosen";
-}
-<h2>Mission Details</h2>
+    /**/
 
-@using (Html.BeginForm("MissionChosen", "Missions", FormMethod.Get))
+    ViewBag.Title = "Index";
+}
+
+<h2>Select Mission to view the FAQ page!</h2>
+
+@using (Html.BeginForm())
 {
-    <fieldset>
-        Select a mission: 
-        <!--Leave as "Missions" plural-->
-        @Html.DropDownList("Missions")
-        <p>
-            <input type="submit" value="Submit" />
-        </p>
-</fieldset>
-} 
+
+    @Html.DropDownListFor(model => model.MISSION_ID, new SelectList(Model.lstMissions, "MISSION_ID", "MISSION_NAME"), "Select Mission")
+    @Html.HiddenFor(model => model.LANGUAGE)
+    @Html.HiddenFor(model => model.PRESIDENT_NAME)
+    @Html.HiddenFor(model => model.ADDRESS)
+    @Html.HiddenFor(model => model.CLIMATE)
+    @Html.HiddenFor(model => model.SYMBOL)
+    @Html.HiddenFor(model => model.DOMINANT_RELIGION)
+    @Html.HiddenFor(model => model.lstMissions)
+
+    <input type="submit" value="GO" class="btn btn-default" />
+}

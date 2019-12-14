@@ -1,0 +1,22 @@
+﻿@model _403_Project_1.Models.Missions
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+
+
+<div style="text-align: center">
+    @using (Html.BeginForm("Login", "Missions", FormMethod.Post, new { ViewBag.Model }))
+    {
+        <label for="inputEmail">Username</label>
+        @Html.TextBox("Username")<br /><br />
+        <label for="inputPassword">Password</label>
+        @Html.Password("Password")<br /><br />
+        <button type="submit" class="fileBtn" style="text-align:center">Login</button>
+        <br />
+        <a href="@Url.Action("Create", "Users", new { missionID = ViewBag.Mission })">Don't have an account? Make one now!</a>
+    }
+</div>
+
